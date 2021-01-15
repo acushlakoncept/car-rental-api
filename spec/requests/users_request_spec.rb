@@ -8,6 +8,7 @@ RSpec.describe "Users", type: :request do
         it 'returns status code 200' do
             expect(response).to have_http_status(:success)
         end
+        
         it 'returns list of users' do
             expect(json.size).to eq(2)
         end
