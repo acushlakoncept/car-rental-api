@@ -4,8 +4,9 @@ module Api
         def index
           users = User.all 
 
-          render json: users
+          render json: UsersRepresenter.new(users).as_json
         end
+
         # def create
         #   user = User.create(user_params)
 
