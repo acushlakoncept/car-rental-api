@@ -7,16 +7,16 @@ module Api
           render json: UsersRepresenter.new(users).as_json
         end
 
-        # def create
-        #   user = User.create(user_params)
+        def create
+          user = User.create(user_params)
 
-        #   if user.save
-        #     render json: UserRepresenter.new(user).as_json, status: :created
-        #   else
-        #     render json: user.errors, status: :unprocessable_entity
-        #   end
+          if user.save
+            render json: UserRepresenter.new(user).as_json, status: :created
+          else
+            render json: user.errors, status: :unprocessable_entity
+          end
 
-        # end
+        end
 
 
         private
