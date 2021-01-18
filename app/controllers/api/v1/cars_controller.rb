@@ -19,8 +19,8 @@ module Api
       end
 
       def car_params
-        params.require(:car).permit(:make, :model, :year,
-                                    :color, :transmission, :ac, :max_capacity)
+        params.require(:car).permit(:make, :model, :year, :color,
+                                    :transmission, :ac, :max_capacity, :image)
       end
     end
   end
