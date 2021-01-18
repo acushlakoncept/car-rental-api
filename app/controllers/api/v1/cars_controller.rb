@@ -1,6 +1,7 @@
 module Api
   module V1
     class CarsController < ApplicationController
+      rescue_from NoMethodError, with: :no_user
       MAX_PAGINATION_LIMIT = 100
 
       def index
@@ -10,7 +11,9 @@ module Api
       end
 
       def create
-        car = Car.create(car_params)
+        current_user = current_user!
+
+        car = current_user.cars.create(car_params)
 
         if car.save
           render json: CarRepresenter.new(car).as_json, status: :created
@@ -31,6 +34,10 @@ module Api
       def car_params
         params.require(:car).permit(:make, :model, :year, :color, :transmission,
                                     :ac, :max_capacity, :image_url)
+      end
+
+      def no_user
+        render json: { error: 'You need to login before you can add a car' }, status: :unauthorized
       end
     end
   end
