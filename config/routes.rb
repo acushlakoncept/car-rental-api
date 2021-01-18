@@ -7,8 +7,8 @@ Rails.application.routes.draw do
       resources :users, only: :index
       resources :cars, only: %i[index create destroy]
 
-      # post 'authenticate', to: 'authentication#create'
-      # post 'register', to: 'users#create'
+      post 'login', to: 'authentication#create'
+      post 'register', to: 'users#create'
     end
   end
 end
