@@ -1,24 +1,47 @@
-# README
+# CAR HIRE/RENTALS JSON API WITH RAILS 6
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this project, users can add a car and it's featured amongst the least of cars available for hire.
+The project serves as my final capstone project at Microverse.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby v2.6.5
+- Ruby on Rails v6.0.3.2
+- RSpec-Rails for testing
 
-* System dependencies
 
-* Configuration
+## Current API Endpoints
 
-* Database creation
+Our API will expose the following RESTful endpoints.
+### BaseUrl: /api/v1
 
-* Database initialization
+| Endpoint                | Functionality                |
+|-------------------------|------------------------------|
+| POST /register          | Signup                       |
+| POST /login             | Login                        |
+| GET /users              | List all users               |
+| GET /cars               | List all cars                |
+| POST /cars              | Add a new car                |
+| DELETE /cars/:id        | Delete a car                 |
+| PUT /cars/:id           | Update a car                 |
+| DELETE /user/:id        | Delete a user                |
+| PUT /user/:id           | Update a user                |
 
-* How to run the test suite
+### POST '/Login'
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Example Request
+```bash
+curl --location --request POST 'http://localhost:3000/api/v1/login' \
+--data-raw '{
+   "username": "acushla",
+   "password": "qazwsx"
+}'
+```
 
-* Deployment instructions
-
-* ...
+#### Body raw
+```json
+{
+   "username": "acushla",
+   "password": "qazwsx"
+}
+```
