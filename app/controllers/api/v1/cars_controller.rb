@@ -9,6 +9,16 @@ module Api
         render json: CarsRepresenter.new(cars).as_json
       end
 
+      def create
+        car = Car.create(car_params)
+
+        if car.save
+          render json: CarRepresenter.new(car).as_json, status: :created
+        else
+          render json: car.errors, status: :unprocessable_entity
+        end
+      end
+
       private
 
       def limit
