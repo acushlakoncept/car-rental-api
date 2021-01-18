@@ -1,6 +1,7 @@
 module Api
   module V1
     class CarsController < ApplicationController
+      before_action :authenticate_request!
       rescue_from NoMethodError, with: :no_user
       MAX_PAGINATION_LIMIT = 100
 
