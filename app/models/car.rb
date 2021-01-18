@@ -1,6 +1,5 @@
 class Car < ApplicationRecord
-  include ImageUploader::Attachment(:image)
   belongs_to :user
 
-  validates :make, :model, :year, :color, :transmission, :ac, presence: true
+  validates :make, :model, :year, :color, :transmission, :ac, :image_url, presence: true
 end
