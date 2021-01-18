@@ -189,7 +189,7 @@ DEPENDENCIES
   byebug
   database_cleaner
   dotenv-rails
-  factory_bot_rails (~> 4.0)
+  factory_bot_rails
   faker
   hirb
   jwt
