@@ -1,4 +1,4 @@
-class UserRepresenter
+class CarRepresenter
   def initialize(car)
     @car = car
   end
@@ -9,7 +9,8 @@ class UserRepresenter
       name: car_name(car),
       transmission: car.transmission,
       ac: ac?(car),
-      max_seat_capacity: car.max_capacity
+      max_seat_capacity: car.max_capacity,
+      image: car.image_url
     }
   end
 

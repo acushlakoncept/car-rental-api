@@ -12,7 +12,8 @@ class CarsRepresenter
         name: car_name(car),
         transmission: car.transmission,
         ac: ac?(car),
-        max_seat_capacity: car.max_capacity
+        max_seat_capacity: car.max_capacity,
+        image: car.image_url
       }
     end
   end
