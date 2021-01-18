@@ -6,11 +6,13 @@ class CarRepresenter
   def as_json
     {
       id: car.id,
+      owner: car.user.username,
       name: car_name(car),
       transmission: car.transmission,
       ac: ac?(car),
       max_seat_capacity: car.max_capacity,
-      image: car.image_url
+      image: car.image_url,
+      date_added: car.created_at
     }
   end
 
