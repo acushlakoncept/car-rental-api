@@ -7,7 +7,7 @@ class CreateCars < ActiveRecord::Migration[6.1]
       t.string :color
       t.string :transmission
       t.boolean :ac
-      t.integer :max_capacity
+      t.integer :max_capacity, default: 4
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
