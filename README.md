@@ -1,6 +1,6 @@
 # CAR HIRE/RENTALS JSON API WITH RAILS 6
 
-In this project, users can add a car and it's featured amongst the least of cars available for hire.
+In this project, users can add a car and it's featured amongst the least of cars available for hire. It is the API implementation of the main app.
 The project serves as my final capstone project at Microverse.
 
 ## Built With
@@ -12,7 +12,7 @@ The project serves as my final capstone project at Microverse.
 
 ## Current API Endpoints
 
-Our API will expose the following RESTful endpoints.
+The API will expose the following RESTful endpoints.
 ### BaseUrl: /api/v1
 
 | Endpoint                | Functionality                |
