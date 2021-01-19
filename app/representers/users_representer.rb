@@ -10,8 +10,7 @@ class UsersRepresenter
       {
         id: user.id,
         username: user.username,
-        admin: user.admin,
-        token: AuthenticationTokenService.call(user.id)
+        admin: user.admin
       }
     end
   end
