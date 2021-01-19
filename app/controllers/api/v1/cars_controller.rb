@@ -23,6 +23,12 @@ module Api
         end
       end
 
+      def show
+        car = Car.find(params[:id])
+
+        render json: CarRepresenter.new(car).as_json
+      end
+
       def destroy
         Car.find(params[:id]).destroy!
 
