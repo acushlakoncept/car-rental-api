@@ -27,14 +27,14 @@ Our API will expose the following RESTful endpoints.
 | DELETE /user/:id        | Delete a user                |
 | PUT /user/:id           | Update a user                |
 
-### POST '/Login'
+### POST '/login'
 
 #### Example Request
 ```bash
 curl --location --request POST 'http://localhost:3000/api/v1/login' \
 --data-raw '{
    "username": "acushla",
-   "password": "qazwsx"
+   "password": "password"
 }'
 ```
 
@@ -42,6 +42,31 @@ curl --location --request POST 'http://localhost:3000/api/v1/login' \
 ```json
 {
    "username": "acushla",
-   "password": "qazwsx"
+   "password": "password"
 }
 ```
+
+### POST '/register'
+
+#### Example Request
+```bash
+curl --location --request POST 'http://localhost:3000/api/v1/register' \
+--data-raw '{
+    "user": {
+        "username": "acushla",
+        "password": "password"
+    }
+}
+'
+```
+
+#### Body raw
+```json
+{
+    "user": {
+        "username": "faith",
+        "password": "qazwsx"
+    }
+}
+```
+
