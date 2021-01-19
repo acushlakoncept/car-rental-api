@@ -70,3 +70,74 @@ curl --location --request POST 'http://localhost:3000/api/v1/register' \
 }
 ```
 
+### POST '/cars'
+
+User must be logged in to perform this action
+
+**AUTHORIZATION**
+
+***Bearer Token***
+
+#### Example Request
+```bash
+curl --location --request POST 'http://localhost:3000/api/v1/cars' \
+--data-raw '{
+  "make": "Toyota",
+  "model": "Corolla",
+  "year": 2015,
+  "color": "Black",
+  "ac": "true",
+  "transmission": "Automatic",
+  "max_capacity": 4,
+  "image_url": "https://source.unsplash.com/800x600/?car,black"
+}'
+```
+
+#### Body raw
+```json
+{
+  "make": "Toyota",
+  "model": "Corolla",
+  "year": 2015,
+  "color": "Black",
+  "ac": "true",
+  "transmission": "Automatic",
+  "max_capacity": 4,
+  "image_url": "https://source.unsplash.com/800x600/?car,black"
+}
+```
+
+### GET '/cars'
+User must be logged in to perform this action
+
+Get the list of all cars available. 
+You can also limit results using `/?limit=2` with offset `/?limit=2/?offset=1`
+
+
+**AUTHORIZATION**
+
+***Bearer Token***
+
+#### Example Request
+```bash
+curl --location --request GET 'http://localhost:3000/api/v1/cars/' \ 
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjA4NDMyNzk2LCJleHAiOjE2MDg1MTkxOTYsImp0aSI6IjA5ZGRmMmZjLWY5M2YtNDVlZS04MDJjLTA1MDlkMTBkOWQzYyJ9.xxxxxxxxxxxxxxx'
+```
+
+### GET '/users'
+User must be logged in and must be an **admin** to perform this action
+
+Get the list of all users available. 
+You can also limit results using `/?limit=2` with offset `/?limit=2/?offset=1`
+
+
+**AUTHORIZATION**
+
+***Bearer Token***
+
+#### Example Request
+```bash
+curl --location --request GET 'http://localhost:3000/api/v1/users' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjA4NDMyNzk2LCJleHAiOjE2MDg1MTkxOTYsImp0aSI6IjA5ZGRmMmZjLWY5M2YtNDVlZS04MDJjLTA1MDlkMTBkOWQzYyJ9.xxxxxxxxxxxxxxx'
+```
+
