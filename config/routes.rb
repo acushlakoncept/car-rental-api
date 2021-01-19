@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: :index
-      resources :cars, only: %i[index create destroy]
+      resources :cars, only: %i[index create show destroy]
 
       post 'login', to: 'authentication#create'
       post 'register', to: 'users#create'
