@@ -218,7 +218,7 @@ Open `http://localhost:3000/` in your browser.
 Deploying to a live server like Heroku is easy, make sure you have the necessary credentials setup on your local machine
 
 ```bash
-heroku create
+heroku create --stack heroku-18
 heroku rename app-new-name
 git push heroku $BRANCH_NAME:master 
 ```
