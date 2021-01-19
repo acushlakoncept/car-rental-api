@@ -3,6 +3,9 @@
 In this project, users can add a car and it's featured amongst the least of cars available for hire. It is the API implementation of the main app.
 The project serves as my final capstone project at Microverse.
 
+## Live Link
+[API Home](https://car-hire-api.herokuapp.com/)
+
 ## Built With
 
 - Ruby v2.6.5
@@ -13,7 +16,7 @@ The project serves as my final capstone project at Microverse.
 ## Current API Endpoints
 
 The API will expose the following RESTful endpoints.
-### BaseUrl: /api/v1
+### BaseUrl: {Host-URL}/api/v1
 
 | Endpoint                | Functionality                |
 |-------------------------|------------------------------|
