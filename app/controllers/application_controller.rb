@@ -11,6 +11,13 @@ class ApplicationController < ActionController::API
 
   protected
 
+  def authenticate_admin!
+    return invalid_authentication if !payload || !AuthenticationTokenService.valid_payload(payload.first)
+
+    current_user!
+    non_admin_authentication unless @current_user.admin == true
+  end
+
   def authenticate_request!
     return invalid_authentication if !payload || !AuthenticationTokenService.valid_payload(payload.first)
 
@@ -20,6 +27,10 @@ class ApplicationController < ActionController::API
 
   def invalid_authentication
     render json: { error: 'You will need to login first' }, status: :unauthorized
+  end
+
+  def non_admin_authentication
+    render json: { error: 'Only admin can access this page' }, status: :unauthorized
   end
 
   private
