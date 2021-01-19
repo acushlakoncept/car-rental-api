@@ -11,7 +11,7 @@
 User.create(username: 'user1', password: 'password')
 User.create(username: 'admin', password: 'password', admin: true)
 
-50.times do 
+50.times do
   admin_user = User.last
   make_and_model = Faker::Vehicle.make_and_model
   new_car = admin_user.cars.create!(make: make_and_model.split(' ').first, model: make_and_model.split(' ').last,

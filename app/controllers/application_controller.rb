@@ -42,5 +42,4 @@ class ApplicationController < ActionController::API
   rescue StandardError
     nil
   end
-
 end

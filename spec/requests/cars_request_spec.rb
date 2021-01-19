@@ -5,12 +5,10 @@ RSpec.describe 'Cars', type: :request do
 
   describe 'GET /cars' do
     before(:each) do
-
       FactoryBot.create(:car, make: 'Toyota', model: 'Corolla',
                               year: 2011, color: 'Silver', transmission: 'Automatic',
                               ac: 'true', max_capacity: 4, user_id: 1,
                               image_url: 'https://source.unsplash.com/800x600/?car,silver')
-
     end
 
     it 'returns all cars' do
@@ -25,6 +23,5 @@ RSpec.describe 'Cars', type: :request do
 
       expect(response).to have_http_status(:success)
     end
-
   end
 end

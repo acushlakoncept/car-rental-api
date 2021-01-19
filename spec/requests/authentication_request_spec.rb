@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "Authentications", type: :request do
-
+RSpec.describe 'Authentications', type: :request do
 end
