@@ -17,7 +17,7 @@ module Api
         if user.save
           render json: UserRepresenter.new(user).as_json, status: :created
         else
-          render json: user.errors, status: :unprocessable_entity
+          render json: { error: user.errors.full_messages.first }, status: :unprocessable_entity
         end
       end
 
