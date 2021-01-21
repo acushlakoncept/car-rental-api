@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :favourite do
-    user { "" }
-    car { "" }
+    user { '' }
+    car { '' }
   end
 end
