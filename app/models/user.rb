@@ -7,4 +7,10 @@ class User < ApplicationRecord
   has_secure_password
   has_many :cars
   has_many :favourites
+
+  def self.fav_cars(user)
+    favs = []
+    user.favourites.each { |a| favs << a.car_id }
+    Car.where(id: favs)
+  end
 end
