@@ -24,6 +24,7 @@ RSpec.describe 'Cars', type: :request do
       get '/api/v1/cars', headers: { 'Authorization' => AuthenticationTokenService.call(user.id) }
 
       expect(response).to have_http_status(:success)
+      expect(json.size).to eq(1)
     end
   end
 end
