@@ -1,7 +1,7 @@
 module Api
   module V1
     class FavouritesController < ApplicationController
-      before_action :authenticate_request!
+      # before_action :authenticate_request!
 
       def index
         favourites = User.fav_cars(current_user!)
