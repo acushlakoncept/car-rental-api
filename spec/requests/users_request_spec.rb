@@ -3,13 +3,18 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  let!(:user1) { create_list(:user, 2) }
 
-  describe 'GET /users' do
-    it 'returns list of users' do
-      get '/api/v1/users'
-      expect(response).to have_http_status(:success)
-      expect(json.size).to eq(2)
+  describe 'POST /register' do
+    it 'authenticates the user' do
+      post '/api/v1/register', params: { user: { username: 'acushla', password: 'password' } }
+
+      expect(response).to have_http_status(:created)
+      expect(json).to eq({
+        'id' => 1,
+        'username' => 'acushla',
+        'admin' => false,
+        'token' => AuthenticationTokenService.call(1)
+      })
     end
   end
 end
