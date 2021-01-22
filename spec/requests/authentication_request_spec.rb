@@ -9,10 +9,10 @@ RSpec.describe 'Authentications', type: :request do
 
       expect(response).to have_http_status(:created)
       expect(json).to eq({
-                           'id' => 1,
+                           'id' => user.id,
                            'username' => 'acushla',
                            'admin' => false,
-                           'token' => AuthenticationTokenService.call(1)
+                           'token' => AuthenticationTokenService.call(user.id)
                          })
     end
 
