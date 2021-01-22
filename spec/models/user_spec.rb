@@ -14,4 +14,9 @@ RSpec.describe User, type: :model do
     should_not validate_length_of(:password)
       .is_at_least(5)
   }
+
+  describe 'Associations' do
+    it { should have_many(:cars) }
+    it { should have_many(:favourites) }
+  end
 end
