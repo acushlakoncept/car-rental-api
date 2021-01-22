@@ -4,7 +4,7 @@ In this project, users can add a car and it's featured amongst the least of cars
 The project serves as my final capstone project at Microverse.
 
 ## Live Link
-[API Home](https://car-hire-api.herokuapp.com/)
+[API Home](https://hire-a-car.herokuapp.com/)
 
 ## Built With
 
@@ -29,6 +29,8 @@ The API will expose the following RESTful endpoints.
 | PUT /cars/:id           | Update a car                 |
 | DELETE /user/:id        | Delete a user                |
 | PUT /user/:id           | Update a user                |
+| POST /favourites        | Add favourite car            |
+| GET /favourites         | Get user favourite cars      |
 
 ### POST '/login'
 
