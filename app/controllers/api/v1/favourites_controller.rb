@@ -15,7 +15,7 @@ module Api
         if favourite.save
           render json: { message: 'Added to favourite succesfully' }, status: :created
         else
-          render json: { error: 'Something went wrong' }, status: :unprocessable_entity
+          render json: { error: favourite.errors.full_messages.first }, status: :unprocessable_entity
         end
       end
 
