@@ -16,14 +16,14 @@ RSpec.describe 'Cars', type: :request do
 
       expect(response).to have_http_status(:unauthorized)
       expect(json).to eq({
-        'error' => 'You will need to login first'
-      })
+                           'error' => 'You will need to login first'
+                         })
     end
 
-    # it 'returns all users' do
-    #   get '/api/v1/users'
+    it 'returns all cars' do
+      get '/api/v1/cars', headers: { 'Authorization' => AuthenticationTokenService.call(user.id) }
 
-    #   expect(response).to have_http_status(:success)
-    # end
+      expect(response).to have_http_status(:success)
+    end
   end
 end
