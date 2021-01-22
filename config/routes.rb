@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: :index
-      resources :favourites, only: :create
+      resources :favourites, only: %i[index create destroy]
       resources :cars, only: %i[index create show destroy]
 
       post 'login', to: 'authentication#create'
