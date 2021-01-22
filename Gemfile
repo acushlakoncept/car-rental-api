@@ -36,6 +36,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'hirb'
+  gem 'rdoc', '~> 6.3'
   gem 'rspec-rails'
 end
 
