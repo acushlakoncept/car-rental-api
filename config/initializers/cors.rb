@@ -8,7 +8,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'hire-a-car-client.herokuapp.com'
+    origins '*'
 
     resource '*',
       headers: :any,
