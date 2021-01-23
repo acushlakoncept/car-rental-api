@@ -22,8 +22,8 @@ module Api
         @user ||= User.find_by(username: params.require(:username))
       end
 
-      def parameter_missing(e)
-        render json: { error: e.message }, status: :unprocessable_entity
+      def parameter_missing(error)
+        render json: { error: error.message }, status: :unprocessable_entity
       end
 
       def handle_unauthenticated
