@@ -8,6 +8,8 @@ The project serves as my final capstone project at Microverse. The repo for the 
 [API Home](https://cush-car.herokuapp.com)
 [ Client App](https://hire-a-car-client.herokuapp.com/)
 
+## Video Presentation
+[YouTube Link](https://www.youtube.com/watch?v=qC0jjU27ZnQ)
 ## Built With
 
 - Ruby v2.7.2
@@ -84,7 +86,7 @@ Open `http://localhost:3001/` in your browser.
 Deploying to a live server like Heroku is easy, make sure you have the necessary credentials setup on your local machine
 
 ```bash
-heroku create --stack heroku-18
+heroku create
 heroku rename app-new-name
 git push heroku $BRANCH_NAME:master 
 ```
