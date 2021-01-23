@@ -1,7 +1,8 @@
 # CAR HIRE/RENTALS JSON API WITH RAILS 6
 
-In this project, users can add a car and it's featured amongst the least of cars available for hire. It is the API implementation of the main app.
-The project serves as my final capstone project at Microverse.
+A RESTFUL API built with Ruby on Rails. It uses JWT to implement Authentication & Authorization.
+In this project, I built a fullstack application where users can access cars and it's featured amongst the least of cars available for hire. 
+The project serves as my final capstone project at Microverse. The repo for the client app can be accessed [here](https://github.com/acushlakoncept/car-rentals-client)
 
 ## Live Link
 [API Home](https://cush-car.herokuapp.com)
@@ -73,10 +74,10 @@ Setup database with:
 Start server with:
 
 ```
-    rails server
+    rails server -p 3001
 ```
 
-Open `http://localhost:3000/` in your browser.
+Open `http://localhost:3001/` in your browser.
 
 ### Deploy to a live server
 
@@ -122,4 +123,8 @@ Feel free to check the [issues page](issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgement
+[Microverse Inc](https://www.microverse.org/)
+
 
