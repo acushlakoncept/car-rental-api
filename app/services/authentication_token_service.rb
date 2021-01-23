@@ -12,8 +12,8 @@ class AuthenticationTokenService
 
   def self.decode(token)
     JWT.decode token, HMAC_SECRET, true, { algorithm: ALGORITHM_TYPE }
-  # rescue JWT::ExiperedSignature
-    # expired_token
+  rescue JWT::ExpiredSignature, JWT::DecodeError
+    false
   end
 
   def self.valid_payload(payload)
