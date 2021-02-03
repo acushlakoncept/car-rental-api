@@ -8,6 +8,7 @@ class CarRepresenter
       id: car.id,
       owner: car.user.username,
       name: car_name(car),
+      user_favourite: favourite?(car.id),
       transmission: car.transmission,
       ac: ac?(car),
       max_seat_capacity: car.max_capacity,
@@ -24,6 +25,11 @@ class CarRepresenter
 
   def ac?(car)
     car.ac == true ? 'Yes' : 'No'
+  end
+
+  def favourite?(car_id)
+    car = Car.find(car_id)
+    car.favourites.where(user_id: current_user!.id) ? 'Yes' : 'No'
   end
 
   attr_reader :car
