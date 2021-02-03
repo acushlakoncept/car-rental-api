@@ -1,6 +1,7 @@
 class CarRepresenter
-  def initialize(car)
+  def initialize(car, user_id)
     @car = car
+    @user_id = user_id
   end
 
   def as_json
@@ -8,7 +9,7 @@ class CarRepresenter
       id: car.id,
       owner: car.user.username,
       name: car_name(car),
-      user_favourite: favourite?(car.id),
+      fav: favourite?(car.id, user_id),
       transmission: car.transmission,
       ac: ac?(car),
       max_seat_capacity: car.max_capacity,
@@ -27,10 +28,10 @@ class CarRepresenter
     car.ac == true ? 'Yes' : 'No'
   end
 
-  def favourite?(car_id)
+  def favourite?(car_id, user_id)
     car = Car.find(car_id)
-    car.favourites.where(user_id: current_user!.id) ? 'Yes' : 'No'
+    car.favourites.where(user_id: user_id).count.zero? ? 'No' : 'Yes'
   end
 
-  attr_reader :car
+  attr_reader :car, :user_id
 end
