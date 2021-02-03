@@ -6,9 +6,10 @@ module Api
       MAX_PAGINATION_LIMIT = 100
 
       def index
+        current_user = current_user!
         cars = Car.limit(limit).offset(params[:offset])
 
-        render json: CarsRepresenter.new(cars).as_json
+        render json: CarsRepresenter.new(cars, current_user.id).as_json
       end
 
       def create
@@ -24,9 +25,10 @@ module Api
       end
 
       def show
+        current_user = current_user!
         car = Car.find(params[:id])
 
-        render json: CarRepresenter.new(car).as_json
+        render json: CarRepresenter.new(car, current_user.id).as_json
       end
 
       def destroy
