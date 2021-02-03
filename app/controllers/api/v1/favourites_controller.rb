@@ -20,7 +20,7 @@ module Api
       end
 
       def destroy
-        favourite = Favourite.find_by(id: params[:id], user: current_user!, car_id: params[:car_id])
+        favourite = Favourite.find_by(user_id: current_user!.id, car_id: params[:id])
 
         if favourite
           favourite.destroy
