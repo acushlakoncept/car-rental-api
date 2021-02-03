@@ -6,7 +6,7 @@ module Api
       def index
         favourites = User.fav_cars(current_user!)
 
-        render json: FavRepresenter.new(favourites).as_json
+        render json: CarRepresenter.new(favourites, current_user!.id).as_json
       end
 
       def create
